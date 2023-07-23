@@ -22,6 +22,10 @@ set(CPACK_RPM_FILE_NAME         "RPM-DEFAULT")
 include_directories($ENV{INCLUDE_PATH})
 link_directories($ENV{LIBRARY_PATH})
 
+set(CMAKE_SKIP_BUILD_RPATH FALSE)
+set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+list( APPEND CMAKE_INSTALL_RPATH "$\{ORIGIN\}/../lib64" )
+
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 include(mozsvc)
