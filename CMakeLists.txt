@@ -19,11 +19,8 @@ set(CPACK_DEBIAN_PACKAGE_RECOMMENDS "luasandbox-hindsight (>= 0.0.1)")
 set(CPACK_DEBIAN_FILE_NAME      "DEB-DEFAULT")
 set(CPACK_RPM_FILE_NAME         "RPM-DEFAULT")
 
-string(REPLACE ":" ";" INCLUDE_LIST $ENV{INCLUDE_PATH})
-include_directories(${INCLUDE_LIST})
-
-string(REPLACE ":" ";" LIBRARY_LIST $ENV{LIBRARY_PATH})
-link_directories(${LIBRARY_LIST})
+include_directories($ENV{INCLUDE_PATH})
+link_directories($ENV{LIBRARY_PATH})
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
